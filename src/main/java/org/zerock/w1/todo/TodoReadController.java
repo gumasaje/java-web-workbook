@@ -1,5 +1,6 @@
 package org.zerock.w1.todo;
 
+import com.sun.tools.javac.comp.Todo;
 import org.zerock.w1.todo.dto.TodoDTO;
 import org.zerock.w1.todo.service.TodoService;
 
@@ -9,20 +10,23 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.List;
 
-@WebServlet(name = "todoListController", urlPatterns = "/todo/list")
-public class TodoListController extends HttpServlet {
+@WebServlet(name = "todoReadController", urlPatterns = "/todo/read")
+public class TodoReadController extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        System.out.println("/todo/read");
 
-        System.out.println("/todo/list");
+        // /todo/read?tno=123
 
-        List<TodoDTO> dtoList = TodoService.INSTANCE.getList();
+        Long tno = Long.parseLong(req.getParameter("tno"));
 
-        req.setAttribute("list", dtoList);
+        TodoDTO dto = TodoService.INSTANCE.get(tno);
 
-        req.getRequestDispatcher("/WEB-INF/todo/list.jsp").forward(req, resp);
+        req.setAttribute("dto", dto);
+
+        req.getRequestDispatcher("/WEB-INF/todo/read.jsp").forward(req, resp);
     }
+
 }

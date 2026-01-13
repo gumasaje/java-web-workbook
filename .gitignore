@@ -43,4 +43,4 @@ bin/
 .DS_Store
 
 # 개인 메모용 파일
-notes.md
+/src/notes.md
