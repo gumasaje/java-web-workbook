@@ -41,11 +41,3 @@ bin/
 
 ### Mac OS ###
 .DS_Store
-
-# 개인 메모용 파일
-notes.md
-
-apache-tomcat-*/
-apache-tomcat-*
-/.idea/data_source_mapping.xml
-/.idea/dataSources.xml
