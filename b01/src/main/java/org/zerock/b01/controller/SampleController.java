@@ -1,5 +1,6 @@
 package org.zerock.b01.controller;
 
+import io.swagger.v3.oas.annotations.Operation;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,6 +17,7 @@ import java.util.stream.IntStream;
 @Log4j2
 public class SampleController {
 
+    @Operation(summary = "hello")
     @GetMapping("/hello")
     public void hello(Model model) {
 
@@ -25,6 +27,7 @@ public class SampleController {
 
     }
 
+    @Operation(summary = "ex/ex1")
     @GetMapping("/ex/ex1")
     public void ex1(Model model) {
 
