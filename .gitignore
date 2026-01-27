@@ -49,3 +49,8 @@ apache-tomcat-*/
 apache-tomcat-*
 /.idea/data_source_mapping.xml
 /.idea/dataSources.xml
+
+### Local Configuration ###
+application-local.properties
+
+/upload/
