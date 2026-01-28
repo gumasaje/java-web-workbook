@@ -61,10 +61,12 @@ public class BoardServiceImpl implements BoardService {
 
         board.clearImages();
 
-        if(boardDTO.getFileNames() != null) {
-            for(String fileName : boardDTO.getFileNames()) {
-                String[] arr = fileName.split("_");
-                board.addImage(arr[0], arr[1]);
+        if (boardDTO.getFileNames() != null) {
+            for (String fileName : boardDTO.getFileNames()) {
+                String[] arr = fileName.split("_", 2);
+                if (arr.length >= 2) {
+                    board.addImage(arr[0], arr[1]);
+                }
             }
         }
 
@@ -112,7 +114,7 @@ public class BoardServiceImpl implements BoardService {
         return PageResponseDTO.<BoardListReplyCountDTO>withAll()
                 .pageRequestDTO(pageRequestDTO)
                 .dtoList(result.getContent())
-                .total((int)result.getTotalElements())
+                .total((int) result.getTotalElements())
                 .build();
 
     }
@@ -129,7 +131,7 @@ public class BoardServiceImpl implements BoardService {
         return PageResponseDTO.<BoardListAllDTO>withAll()
                 .pageRequestDTO(pageRequestDTO)
                 .dtoList(result.getContent())
-                .total((int)result.getTotalElements())
+                .total((int) result.getTotalElements())
                 .build();
 
     }
