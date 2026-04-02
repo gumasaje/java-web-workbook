@@ -6,10 +6,7 @@ build/
 .kotlin
 
 ### IntelliJ IDEA ###
-.idea/modules.xml
-.idea/jarRepositories.xml
-.idea/compiler.xml
-.idea/libraries/
+.idea/
 *.iws
 *.iml
 *.ipr
@@ -41,9 +38,6 @@ bin/
 
 ### Mac OS ###
 .DS_Store
-
-# 개인 메모용 파일
-notes.md
 
 apache-tomcat-*/
 apache-tomcat-*
